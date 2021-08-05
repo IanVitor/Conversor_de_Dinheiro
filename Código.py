@@ -1,45 +1,33 @@
-def converter():
-
-    print("""
-    Conversor e dinheiro:
-    [1] Dolar
-    [2] Euro
-    [3] Yen
-    """)
-
-    moeda = int(input('Para qual das moedas você quer converter:'))
-    print('-'*42)
-
-    reais = float(input('Quantos reais você quer converter:'))
+def processo_de_conversao_de_dinheiro():
+    print("Opções de moedas disponíveis: \n[1] Dolar \n[2] Euro \n[3] Yen")
+    print('-' * 42)
+    moeda_escolhida = int(input('Para qual das moedas você quer converter:'))
+    print('-' * 42)
+    quantia_de_reais = float(input('Quantos reais você quer converter:'))
     print(' ')
 
-    if moeda == 1:
-        conver = reais / 5.08
-        print('Você converteu R$ {:.2f} para US$ {:.2f}!'.format(reais, conver))
+    if moeda_escolhida == 1:
+        valor_final = quantia_de_reais / 5.08
+        print('Você converteu R$ {:.2f} para US$ {:.2f}!'.format(quantia_de_reais, valor_final))
+    elif moeda_escolhida == 2:
+        valor_final = quantia_de_reais / 6.16
+        print('Você converteu R$ {:.2f} para € {:.2f}!'.format(quantia_de_reais, valor_final))
+    elif moeda_escolhida == 3:
+        valor_final = quantia_de_reais / 0.046
+        print('Você converteu R$ {:.2f} para ¥ {:.2f}!'.format(quantia_de_reais, valor_final))
 
-    elif moeda == 2:
-        conver = reais / 6.16
-        print('Você converteu R$ {:.2f} para € {:.2f}!'.format(reais, conver))
 
-    elif moeda == 3:
-        conver = reais / 0.046
-        print('Você converteu R$ {:.2f} para ¥ {:.2f}!'.format(reais, conver))
+processo_de_conversao_de_dinheiro()
 
-    conver = 0
+repetir_processo = True
 
-converter()
-
-teste = True
-
-while teste == True:
-
+while repetir_processo:
     print(' ')
-    continuar = str(input('Desejar calcular novamente [Sim] ou [Nao]:'))
+    resposta_calcular_novamente = str(input('Desejar calcular novamente [Sim] ou [Nao]:'))
 
-    if continuar == 'Sim':
-        converter()
-
+    if resposta_calcular_novamente == 'Sim':
+        processo_de_conversao_de_dinheiro()
     else:
-        teste = False
+        repetir_processo = False
 
 print('Obrigado por usar o conversor!')
