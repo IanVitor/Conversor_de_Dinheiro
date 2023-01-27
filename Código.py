@@ -7,7 +7,7 @@ def processo_de_conversao_de_dinheiro():
     print(' ')
 
     if moeda_escolhida == 1:
-        valor_final = quantia_de_reais / 5.08
+        valor_final = quantia_de_reais / 5.58
         print('Você converteu R$ {:.2f} para US$ {:.2f}!'.format(quantia_de_reais, valor_final))
     elif moeda_escolhida == 2:
         valor_final = quantia_de_reais / 6.16
